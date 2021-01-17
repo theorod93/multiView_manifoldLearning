@@ -9,6 +9,8 @@ This script contains the code of the following functions
 -> m-SNE
 -> multi-SNE
 Found in 'Multi-view data visualisation via manifold learning' paper
+
+Disclaimer: Part of the code is taken directly from the original author of t-SNE found in this link: https://lvdmaaten.github.io/tsne/
 '''
 
 import numpy as np
@@ -118,6 +120,7 @@ def pca(X=np.array([]), no_dims=50):
 
 def tsne(X=np.array([]), no_dims=2, initial_dims=50, perplexity=30.0):
     """
+    t-SNE:
         Runs t-SNE on the dataset in the NxD array X to reduce its
         dimensionality to no_dims dimensions. The syntaxis of the function is
         `Y = tsne.tsne(X, no_dims, perplexity), where X is an NxD NumPy array.
@@ -222,6 +225,7 @@ def multiPCA(X=np.array([[]]), no_dims=50):
 
 def mSNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 30.0, max_iter = 1000):
     """
+    m-SNE:
         Runs t-SNE on the array(list) X, which includes M datasets
         in the NxD_i for each dataset X_i to reduce its
         dimensionality to no_dims dimensions. The syntaxis of the function is
@@ -347,6 +351,7 @@ def mSNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 30.0, 
 
 def multi_SNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 30.0, max_iter = 1000):
     """
+    Multi-SNE:
         Runs t-SNE on the array(list) X, which includes M datasets
         in the NxD_i for each dataset X_i to reduce its
         dimensionality to no_dims dimensions. The syntaxis of the function is
