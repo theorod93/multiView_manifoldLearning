@@ -37,7 +37,6 @@ non_linear_mView_vis_simulation <- function(M, C, mean_matrix, p, num_samples){
         Xtemp[,i] <- runif(n = num_samples, min = 0, max = mean_matrix[m,c])
 
         #Generate y as a*e^(bx)+c
-
 #        Xinp[,i] <- runif(1,0,20)*exp(Xtemp[,i])+runif(n=num_samples,0,5)
 #        Xtemp[,i] <- rnorm(n = num_samples, mean = mean_matrix[m,c])
         Xinp[,i] <- (Xtemp[,i]+sum_val)^power_val/div_val + rnorm(n=num_samples)
@@ -55,16 +54,18 @@ non_linear_mView_vis_simulation <- function(M, C, mean_matrix, p, num_samples){
               "sum_values" = sum_values, "div_values" = div_values))
 }
 
-# Scenario (B)
-M = 4
-C = 3
+# Example scenario 
+M = 4 # Number of data-views
+C = 3 # Number of clusters
 mean_matrix <- matrix(nrow = M, ncol = C)
-mean_matrix[1,] <- c(1,1,2)
+# Set mean values to distinguish the clusters within each data-view
+mean_matrix[1,] <- c(1,1,2) 
 mean_matrix[2,] <- c(1,2,1)
 mean_matrix[3,] <- c(2,1,1)
 mean_matrix[4,] <- c(1,1,1)
 p = c(100,100,100,1000)
-num_samples = 100
+num_samples = 100 # Number of samples 
+# Get data
 simData_scenB <- non_linear_mView_vis_simulation(M = M,
                                                  C = C,
                                                  mean_matrix = mean_matrix,
