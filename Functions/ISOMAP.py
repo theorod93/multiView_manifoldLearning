@@ -4,11 +4,13 @@
 """
 
 '''
-In this script, we include all solutions in multi-view data visualisation, namely:
-    (A) ISOMAP
-    (B) m-ISOMAP
-    (C) multi-ISOMAP
+This script contains the code of the following functions
+-> LLE
+-> m-LLE
+-> multi-LLE
+Found in 'Multi-view data visualisation via manifold learning' paper
 
+Outline:
 Multi-view ISOMAP:
 Input: X = (X_1,..., X_M), where M is the number of views
     X_m \in R^{NxD_m}, for each m = {1,...,M}
