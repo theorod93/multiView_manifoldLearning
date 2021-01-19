@@ -18,6 +18,7 @@ Contains the code of Multi-view Data Visualisation via Manifold Learning paper
 ## Simulations
 - Simulating data under various conditions/scenarios
 
+
 ## Real Data
 - Handwritten Digits: https://archive.ics.uci.edu/ml/datasets/Multiple+Features
 - Caltech7: https://github.com/yeqinglee/mvdata
