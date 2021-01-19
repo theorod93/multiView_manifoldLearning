@@ -11,6 +11,7 @@ Contains the code of Multi-view Data Visualisation via Manifold Learning paper
   - m-LLE
   - multi-LLE
 - ISOMAP-based
+
   -ISOMAP
   - m-ISOMAP
   - multi-ISOMAP
