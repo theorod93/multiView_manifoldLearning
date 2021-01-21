@@ -1,5 +1,5 @@
-# Multi-view Data Visualisation via Manifold Learning paper
-Contains the code of Multi-view Data Visualisation via Manifold Learning paper
+# Multi-view Data Visualisation via Manifold Learning 
+Contains the code of "Multi-view Data Visualisation via Manifold Learning" by T. Rodosthenous, V. Shahrezaei, M. Evangelou. arXiv e-prints,arXiv:2101.06763, 2021.
 
 ## Functions
 - SNE-based
