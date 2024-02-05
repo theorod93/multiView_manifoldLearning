@@ -11,15 +11,15 @@ The applicability of multi-SNE is illustrated by its implementation in the newly
 ## Functions
 This folder contains the functions for the single-view and multi-view manifold learning algorithms that have been used in the aforementioned manuscript. The functions are separated by the original single-view solutions from which their multi-view extensions have been based.
 
-- **SNE.py**:SNE-based
+- **SNE.py**: SNE-based
   - t-SNE
   - m-SNE
   - multi-SNE
-- **LLE.py**:LLE-based
+- **LLE.py**: LLE-based
   - LLE
   - m-LLE
   - multi-LLE
-- **ISOMAP.py**:ISOMAP-based
+- **ISOMAP.py**: ISOMAP-based
   - ISOMAP
   - m-ISOMAP
   - multi-ISOMAP
