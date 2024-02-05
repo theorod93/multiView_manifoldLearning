@@ -31,7 +31,7 @@ start_time_multiISOMAP = time.time()
 # Run algorithm
 Y_multiISOMAP = multi_isomap_path(Xinput, 2, 50, 20.0, 1000)
 end_time_multiISOMAP = time.time()
-# CoISOMAPct computational time
+# Collect computational time
 running_time_multiISOMAP = end_time_multiISOMAP - start_time_multiISOMAP
 
 # Data input
@@ -47,5 +47,5 @@ start_time_mISOMAP = time.time()
 # Run algorithm
 Y_mISOMAP = m_isomap(Xinput, 2, 50, 10.0, 1000)
 end_time_mISOMAP = time.time()
-# CoISOMAPct computational time
+# Collect computational time
 running_time_mISOMAP = end_time_mISOMAP - start_time_mISOMAP
