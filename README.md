@@ -25,10 +25,10 @@ This folder contains the functions for the single-view and multi-view manifold l
   - multi-ISOMAP
 
 ## Simulations
-- Simulating data under various conditions/scenarios.
+Provides an R code that was used in simulating data under various conditions/scenarios.
 
 ## Examples
-Provides examples for all multi-view manifold learning algorithms. The examples presented are inspired by the Caltech7 dataset.
+Provides examples for all multi-view manifold learning algorithms. The examples presented are based on exploring the Caltech7 dataset.
 
 
 ## Real Data
