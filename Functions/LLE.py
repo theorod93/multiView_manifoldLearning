@@ -43,6 +43,9 @@ from sklearn.utils.extmath import stable_cumsum
 from sklearn.utils.validation import check_is_fitted, FLOAT_DTYPES
 from sklearn.neighbors import NearestNeighbors
 import math
+from sklearn.cross_decomposition import CCA
+import matplotlib.pyplot as plt
+from scipy.sparse.csgraph import connected_components, shortest_path
 
 
 
@@ -84,7 +87,7 @@ def barycenter_weights(X, Z, reg=1e-3):
         else:
             R = reg
         G.flat[::Z.shape[1] + 1] += R
-        w = solve(G, v, sym_pos=True)
+        w = solve(G, v, assume_a='pos')
         B[i, :] = w / np.sum(w)
     return B
 
@@ -115,7 +118,7 @@ def barycenter_kneighbors_graph(X, n_neighbors, reg=1e-3, n_jobs=None):
     sklearn.neighbors.kneighbors_graph
     sklearn.neighbors.radius_neighbors_graph
     """
-    knn = NearestNeighbors(n_neighbors + 1, n_jobs=n_jobs).fit(X)
+    knn = NearestNeighbors(n_neighbors=n_neighbors + 1, n_jobs=n_jobs).fit(X)
     X = knn._fit_X
     n_samples = X.shape[0]
     ind = knn.kneighbors(X, return_distance=False)[:, 1:]
@@ -228,7 +231,7 @@ def lle(X=np.array([]), n_components=2, n_neighbors = 5, eigen_solver="auto", n_
     M_sparse = (eigen_solver != 'dense')
 
     W = barycenter_kneighbors_graph(
-            nbrs, n_neighbors=n_neighbors, reg=reg, n_jobs=n_jobs)
+            X=nbrs, n_neighbors=n_neighbors, reg=reg, n_jobs=n_jobs)
 
     if M_sparse:
         M = eye(*W.shape, format=W.format) - W
@@ -244,7 +247,7 @@ def lle(X=np.array([]), n_components=2, n_neighbors = 5, eigen_solver="auto", n_
 
 def multiLLE(X = np.array([[]]), n_components=2, n_neighbors = 5,
                     eigen_solver="auto", n_jobs=None, reg = 1e-3):
-    '''
+        '''
         X is the input matrix
             -- Multi-view data, in the same structure as multi-SNE
         no_dims is the number of components for the embedding matrix Y
