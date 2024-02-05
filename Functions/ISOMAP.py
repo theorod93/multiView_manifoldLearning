@@ -60,7 +60,8 @@ from sklearn.utils.extmath import stable_cumsum
 from sklearn.utils.validation import check_is_fitted, FLOAT_DTYPES
 from sklearn.neighbors import NearestNeighbors
 import math
-from sklearn.utils.graph import graph_shortest_path
+from sklearn.cross_decomposition import CCA
+import matplotlib.pyplot as plt
 
 def mds(data, n_components=2):
     """
@@ -80,7 +81,7 @@ def mds(data, n_components=2):
     ]
     # Select n_components eigenvectors with largest eigenvalues, obtain subspace transform matrix
     eig_pairs.sort(key=lambda x: x[0], reverse=True)
-    eig_pairs = np.array(eig_pairs)
+    eig_pairs = np.array(eig_pairs, dtype=object)
     matrix_w = np.hstack(
         [eig_pairs[i, 1].reshape(data.shape[1], 1) for i in range(n_components)]
     )
@@ -141,7 +142,7 @@ def isomap(data, n_components=2, n_neighbors=6):
 
     # Compute shortest paths from distance matrix
 
-    graph = graph_shortest_path(data, directed=False)
+    graph = shortest_path(data, directed=False, method='auto')
     graph = -0.5 * (graph ** 2)
 
     # Return the MDS projection on the shortest paths graph
@@ -181,7 +182,7 @@ def multi_isomap_path(X, n_components=2, n_neighbors=6, method = 'average', zero
         # Compute distance matrix for each view
         g_temp,_ = distance_mat(X[view], n_neighbors)
         # Compute shortest paths from distance matrix
-        graph_temp = graph_shortest_path(g_temp, directed=False)
+        graph_temp = shortest_path(g_temp, directed=False, method='auto')
         graph_temp = -0.5 * (graph_temp ** 2)
         all_graphs[view] = graph_temp
 
@@ -233,7 +234,7 @@ def multi_isomap_graph(X, n_components=2, n_neighbors=6, method = 'average'):
 
     # Compute shortest paths from distance matrix
     print("Computing the shortest paths")
-    graph = graph_shortest_path(G_final, directed=False)
+    graph = shortest_path(G_final, directed=False, method='auto')
     graph = -0.5 * (graph ** 2)
 
     # Return the MDS projection on the shortest paths graph
