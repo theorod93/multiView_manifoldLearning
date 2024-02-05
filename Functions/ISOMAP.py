@@ -62,6 +62,7 @@ from sklearn.neighbors import NearestNeighbors
 import math
 from sklearn.cross_decomposition import CCA
 import matplotlib.pyplot as plt
+from scipy.sparse.csgraph import connected_components, shortest_path
 
 def mds(data, n_components=2):
     """
