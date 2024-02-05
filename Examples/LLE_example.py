@@ -29,7 +29,7 @@ Xinput[5] = Xf
 
 start_time_multiLLE = time.time()
 # Run algorithm
-Y_multiLLE = multi_LLE(Xinput, 2, 50, 20.0, 1000)
+Y_multiLLE = multiLLE(Xinput, 2, 50, 20.0, 1000)
 end_time_multiLLE = time.time()
 # Collect computational time
 running_time_multiLLE = end_time_multiLLE - start_time_multiLLE
