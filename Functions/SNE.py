@@ -25,6 +25,9 @@ from sklearn.utils.extmath import stable_cumsum
 from sklearn.utils.validation import check_is_fitted, FLOAT_DTYPES
 from sklearn.neighbors import NearestNeighbors
 import math
+from sklearn.cross_decomposition import CCA
+import matplotlib.pyplot as plt
+from scipy.sparse.csgraph import connected_components, shortest_path
 
 def Hbeta(D=np.array([]), beta=1.0):
     """
@@ -251,11 +254,11 @@ def mSNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 30.0, 
     M = dim[0]
     # Make sure each data-set has the same axis=0 dimension
     Xtemp = X[1]
-    XsTemp = np.array(Xtemp)
+    XsTemp = np.array(Xtemp, dtype=object)
     baselineDim = XsTemp.shape[0]
     for view in range(M):
         Xtemp = X[view]
-        XsTemp = np.array(Xtemp)
+        XsTemp = np.array(Xtemp, dtype=object)
         dimToCheck = XsTemp.shape[0]
         if dimToCheck != baselineDim:
             print("Error: Number of rows (samples) must be the same in all data-sets of list X.")
@@ -271,17 +274,17 @@ def mSNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 30.0, 
     f = [(0,0),(0,0)]
     g = [(0,0),(0,0)]
     if M==2:
-        Xi = np.array([a,b])
+        Xi = np.array([a,b], dtype=object)
     elif M ==3:
-        Xi = np.array([a,b,c])
+        Xi = np.array([a,b,c], dtype=object)
     elif M ==4:
-        Xi = np.array([a,b,c,d])
+        Xi = np.array([a,b,c,d], dtype=object)
     elif M ==5:
-        Xi = np.array([a,b,c,d,e])
+        Xi = np.array([a,b,c,d,e], dtype=object)
     elif M ==6:
-        Xi = np.array([a,b,c,d,e,f])
+        Xi = np.array([a,b,c,d,e,f], dtype=object)
     elif M ==7:
-        Xi = np.array([a,b,c,d,e,f,g])
+        Xi = np.array([a,b,c,d,e,f,g], dtype=object)
     Y = np.random.randn(baselineDim, no_dims)
     dY =  np.zeros((baselineDim, no_dims))
     iY = np.zeros((baselineDim, no_dims))
@@ -377,11 +380,11 @@ def multi_SNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 3
     M = dim[0]
     # Make sure each data-set has the same axis=0 dimension
     Xtemp = X[1]
-    XsTemp = np.array(Xtemp)
+    XsTemp = np.array(Xtemp, dtype=object)
     baselineDim = XsTemp.shape[0]
     for set in range(M):
         Xtemp = X[set]
-        XsTemp = np.array(Xtemp)
+        XsTemp = np.array(Xtemp, dtype=object)
         dimToCheck = XsTemp.shape[0]
         if dimToCheck != baselineDim:
             print("Error: Number of rows (samples) must be the same in all data-sets of list X.")
@@ -397,17 +400,17 @@ def multi_SNE(X = np.array([[]]), no_dims = 2, initial_dims = 50, perplexity = 3
     f = [(0,0),(0,0)]
     g = [(0,0),(0,0)]
     if M==2:
-        Xi = np.array([a,b])
+        Xi = np.array([a,b], dtype=object)
     elif M ==3:
-        Xi = np.array([a,b,c])
+        Xi = np.array([a,b,c], dtype=object)
     elif M ==4:
-        Xi = np.array([a,b,c,d])
+        Xi = np.array([a,b,c,d], dtype=object)
     elif M ==5:
-        Xi = np.array([a,b,c,d,e])
+        Xi = np.array([a,b,c,d,e], dtype=object)
     elif M ==6:
-        Xi = np.array([a,b,c,d,e,f])
+        Xi = np.array([a,b,c,d,e,f], dtype=object)
     elif M ==7:
-        Xi = np.array([a,b,c,d,e,f,g])
+        Xi = np.array([a,b,c,d,e,f,g], dtype=object)
     Y = np.random.randn(baselineDim, no_dims)
     dY =  np.zeros((baselineDim, no_dims))
     iY = np.zeros((baselineDim, no_dims))
