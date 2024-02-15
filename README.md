@@ -28,7 +28,7 @@ This folder contains the functions for the single-view and multi-view manifold l
 Provides an R code that was used in simulating data under various conditions/scenarios.
 
 ## Examples
-For all the real and simulated data, the same approach was taken. This directory provides examples of applying all multi-view manifold learning algorithms. Although the examples presented are based on exploring the Caltech7 dataset, the same methodology was used for all dataset presented in the manuscript.
+For all the real and simulated data, the same approach was taken. This directory provides examples of applying all multi-view manifold learning algorithms. Although the examples presented are based on exploring the Caltech7 dataset, the same methodology was used for all datasets presented in the manuscript. Please note that for simplicity a single value for the corresponding tuning parameter was used in each algorithm (perplexity for SNE-based solutions, and the number of neighbours for ISOMAP-based and LLE-based solutions). However, practically a range of values should be tested as is described in the manuscript. 
 
 ## Real Data
 - Handwritten Digits: https://archive.ics.uci.edu/ml/datasets/Multiple+Features
