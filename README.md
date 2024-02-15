@@ -28,8 +28,7 @@ This folder contains the functions for the single-view and multi-view manifold l
 Provides an R code that was used in simulating data under various conditions/scenarios.
 
 ## Examples
-Provides examples for all multi-view manifold learning algorithms. The examples presented are based on exploring the Caltech7 dataset.
-
+For all the real and simulated data, the same approach was taken. This directory provides examples of applying all multi-view manifold learning algorithms. Although the examples presented are based on exploring the Caltech7 dataset, the same methodology was used for all dataset presented in the manuscript.
 
 ## Real Data
 - Handwritten Digits: https://archive.ics.uci.edu/ml/datasets/Multiple+Features
