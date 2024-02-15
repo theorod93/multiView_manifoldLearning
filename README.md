@@ -9,7 +9,7 @@ The proposed multi-view approaches provide more comprehensible projections of th
 The applicability of multi-SNE is illustrated by its implementation in the newly developed and challenging multi-omics single-cell data. The aim is to visualise and identify cell heterogeneity and cell types in biological tissues relevant to health and disease. In this application, multi-SNE provides an improved performance over single-view manifold learning approaches and a promising solution for unified clustering of multi-omics single-cell data.
 
 ## Functions
-This folder contains the functions for the single-view and multi-view manifold learning algorithms that have been used in the aforementioned manuscript. The functions are separated by the original single-view solutions from which their multi-view extensions have been based.
+This directory contains the functions for the single-view and multi-view manifold learning algorithms that have been used in the aforementioned manuscript. The functions are separated by the original single-view solutions from which their multi-view extensions have been based.
 
 - **SNE.py**: SNE-based
   - t-SNE
@@ -25,7 +25,7 @@ This folder contains the functions for the single-view and multi-view manifold l
   - multi-ISOMAP
 
 ## Simulations
-Provides an R code that was used in simulating data under various conditions/scenarios.
+This directory provides an R code that was used in simulating data under various conditions/scenarios.
 
 ## Examples
 For all the real and simulated data, the same approach was taken. This directory provides examples of applying all multi-view manifold learning algorithms. Although the examples presented are based on exploring the Caltech7 dataset, the same methodology was used for all datasets presented in the manuscript. Please note that for simplicity a single value for the corresponding tuning parameter was used in each algorithm (perplexity for SNE-based solutions, and the number of neighbours for ISOMAP-based and LLE-based solutions). However, practically a range of values should be tested as is described in the manuscript. 
