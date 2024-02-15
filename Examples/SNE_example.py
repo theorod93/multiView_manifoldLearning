@@ -31,7 +31,8 @@ Xinput[5] = Xf
 
 start_time_multiSNE = time.time()
 # Run algorithm
-Y_multiSNE = multi_SNE(Xinput, 2, 50, 20.0, 1000)
+perplexity_input = 50
+Y_multiSNE = multi_SNE(Xinput, 2, 50, perplexity_input, 1000)
 end_time_multiSNE = time.time()
 # Collect computational time
 running_time_multiSNE = end_time_multiSNE - start_time_multiSNE
@@ -47,7 +48,8 @@ Xinput[5] = Xf
 
 start_time_mSNE = time.time()
 # Run algorithm
-Y_mSNE = mSNE(Xinput, 2, 50, 10.0, 1000)
+perplexity_input = 50
+Y_mSNE = mSNE(Xinput, 2, 50, perplexity_input, 1000)
 end_time_mSNE = time.time()
 # Collect computational time
 running_time_mSNE = end_time_mSNE - start_time_mSNE
