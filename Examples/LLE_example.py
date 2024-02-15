@@ -29,7 +29,8 @@ Xinput[5] = Xf
 
 start_time_multiLLE = time.time()
 # Run algorithm
-Y_multiLLE = multiLLE(Xinput, 2, 50, 20.0, 1000)
+n_neighbors_input = 50
+Y_multiLLE = multiLLE(Xinput, 2, n_neighbors_input, 20.0, 1000)
 end_time_multiLLE = time.time()
 # Collect computational time
 running_time_multiLLE = end_time_multiLLE - start_time_multiLLE
@@ -45,7 +46,8 @@ Xinput[5] = Xf
 
 start_time_mLLE = time.time()
 # Run algorithm
-Y_mLLE = mLLE(Xinput, 2, 50, 10.0, 1000)
+n_neighbors_input = 50
+Y_mLLE = mLLE(Xinput, 2, n_neighbors_input, 10.0, 1000)
 end_time_mLLE = time.time()
 # Collect computational time
 running_time_mLLE = end_time_mLLE - start_time_mLLE
