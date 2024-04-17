@@ -34,8 +34,4 @@ For all the real and simulated data, the same approach was taken. This directory
 - Handwritten Digits: https://archive.ics.uci.edu/ml/datasets/Multiple+Features
 - Caltech7: https://github.com/yeqinglee/mvdata
 - Cancer Types: http://compbio.cs.toronto.edu/SNF/SNF/Software.html
-- 
-
-[![DOI](https://data.caltech.edu/badge/330357837.svg)](https://data.caltech.edu/badge/latestdoi/330357837)
-
 
