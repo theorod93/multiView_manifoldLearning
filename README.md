@@ -35,3 +35,4 @@ For all the real and simulated data, the same approach was taken. This directory
 - Caltech7: https://github.com/yeqinglee/mvdata
 - Cancer Types: http://compbio.cs.toronto.edu/SNF/SNF/Software.html
 
+[![DOI](https://sandbox.zenodo.org/badge/330357837.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.46215)
